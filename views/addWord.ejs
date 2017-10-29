@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+    
+  </head>
+  <body>
+    <% include index%>
+  	<div class="container">
+
+    <div class="row">
+      <div class="col-md-2"></div>
+
+      <div class="col-md-6">
+        
+        <form method="post" action="/addWordsubmit" name="addword">
+           <div class="form-group">
+             <label >The Word:</label>
+             <input type="text" class="form-control" name="wordName" onchange="validate()">
+           </div>
+           <div class="form-group">
+              <label>The Type</label>
+                 <select class="form-control" name="select" onchange="validate()">
+                      <%for(var i=0;i<typeArray.length;i++){ %>
+                        <option value=<%=typeArray[i].wordType%>>
+                           <%=typeArray[i].wordType%>
+                          </option>   
+                      <%}%>
+                 </select>
+           </div>
+           <div class="form-group" onkeyup="validate()">
+              <label>The Mean</label>
+              <input type="text" name="wordMean" class="form-control">
+           </div>
+           <button type="submit" class="btn btn-primary" disabled>submit</button>
+        </form>
+      </div>
+    </div>
+  		
+  	
+
+    <div class="col-md-4"></div>
+  		
+  	</div>
+    <script type="text/javascript">
+        
+         function validate(){
+              if(($(":text").eq(0).val()!=="")&&
+                  ($(":text").eq(1).val()!="")&&
+                  ($("select").val()!="")){
+                
+                  $("button").prop("disabled",false);
+              }
+            }
+
+        
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+   <link rel="icon" href="images/favicon.ico" type="image/x-icon">  
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
+
+  <script type="text/javascript" src="javascripts/canvas-particle.js"></script>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+ 
+  <style type="text/css">
+    
+      body{background-color: #2D2D2D}
+      .at{
+      	background-color: #337AB7;
+      }
+    
+  </style>
+</head>
+<body>
+    <div class="container">
+
+    <div id="mydiv"></div>
+    <!-- 顶部空白 -->
+    <div style="height: 250px"></div>
+    <div class="row">
+    	<div class="col-md-4"></div>
+    	<div class="col-md-1">
+    		<button class="btn btn-default  at" id="loginbtn">登陆</button>
+    	</div>
+    	<div class="col-md-1">
+    		<button class="btn btn-default " id="registerbtn">注册</button>
+    	</div>
+    </div>
+    <br>
+    <div class="row">
+
+      	<div class="col-md-4"></div>
+      	<div class="col-md-5">
+
+	        <form method="post" id="loginForm" action="/login" >
+	        	
+	        	<div class="form-group" >
+	        		<label style="color:#337ab7;font-size: 20px">用户名:</label>
+	        		<input type="text" name="userName" class="form-control">
+	        	</div>	
+	        	<div class="form-group">
+	        		<label style="color:#337ab7;font-size: 20px">密码:</label>
+	        		<input type="text" name="password" class="form-control">
+	        	</div>
+	        	<div class="form-group">
+	        		<input type="submit" name="" class="btn btn-primary" value="登陆" style="font-size: 18px">
+
+	        	</div>
+	        </form>
+
+	        <form method="post" id="registerForm" action="/register" style="display: none">
+	        	
+	        	<div class="form-group">
+	        		<label style="color:#337ab7;font-size: 20px">用户名:</label>
+	        		<input type="text" name="userName" class="form-control">
+	        	</div>	
+	        	<div class="form-group">
+	        		<label style="color:#337ab7;font-size: 20px">密码:</label>
+	        		<input type="password" name="password" class="form-control">
+	        	</div>
+	        	<div class="form-group">
+	        		<label style="color:#337ab7;font-size: 20px">重复密码:</label>
+	        		<input type="password" name="password2" class="form-control">
+	        	</div>
+	        	<div class="form-group">
+	        		<input type="submit" name="" class="btn btn-primary" value="注册" style="font-size: 18px">
+
+	        	</div>
+	        </form>
+
+      	</div>
+    </div>
+
+      <!-- 导航栏 -->
+
+
+      <script type="text/javascript">
+
+      $(function(){
+
+
+      		$("#registerbtn").click(function(){
+      			$(this).addClass("at");
+      			$("#loginbtn").removeClass("at")
+      			$("#loginForm").hide();
+      			$("#registerForm").show(500);
+      		})
+
+      		$("#loginbtn").click(function(){
+      			$(this).addClass("at");
+      			$("#registerbtn").removeClass("at")
+      			$("#registerForm").hide();
+      			$("#loginForm").show(500);
+      		})
+
+
+      })
+	
+	window.onload=function(){
+		 var config = {
+		        vx: 4,//点x轴速度,正为右，负为左
+		        vy:  4,//点y轴速度
+		        height: 2,//点高宽，其实为正方形，所以不宜太大
+		        width: 2,
+		        count: 100,//点个数
+		        color: "121, 162, 185",//点颜色
+		        stroke: "51,122,183",//线条颜色
+		        dist: 6000,//点吸附距离
+		        e_dist: 20000,//鼠标吸附加速距离
+		        max_conn: 10//点到点最大连接数
+		    }
+		    //调用
+		    CanvasParticle(config);
+
+	}
+
+</script>
+      
+</body>
+
+</html>

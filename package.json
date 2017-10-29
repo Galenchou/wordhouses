@@ -1,0 +1,28 @@
+{
+  "name": "word",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "array-flatten": "^2.1.1",
+    "body-parser": "~1.17.1",
+    "bootstrap": "^3.3.7",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "ee-first": "^1.1.1",
+    "ejs": "~2.5.6",
+    "express": "~4.15.2",
+    "express-favicon": "^2.0.0",
+    "finalhandler": "^1.0.5",
+    "jquery": "^3.2.1",
+    "merge-descriptors": "*",
+    "mongodb": "*",
+    "mongoose": "^4.11.10",
+    "morgan": "~1.8.1",
+    "ms": "^2.0.0",
+    "path-to-regexp": "^2.0.0",
+    "serve-favicon": "~2.4.2"
+  }
+}

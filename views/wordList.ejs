@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>wordList</title>
+   
+  </head>
+  <body>
+    <% include index%>
+  	<div class="container">
+  		
+     
+     
+      <div class="row">
+
+         <div class="col-md-2"></div>
+
+          <div class="col-md-6">
+            
+            <form method="post" action="/findedit">
+                <div class="row">
+                  
+                  <div class="col-md-6">
+                    <input type="text" name="wordlistfind" class="form-control">   
+                  </div>
+                  <div class="col-md-2">
+                     <button type="submit" class="btn btn-primary">submit</button>
+                  </div>
+                </div>
+            </form>
+          </div>     
+      </div>
+       <div class="top"></div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          
+          <table class="table table-bordered">
+           <tr>
+             <th>单词</th>
+             <th>领域</th>
+             <th>意义</th>
+             <th>操作</th>
+           </tr>
+           <%for(var i=0;i<result.length;i++){%>
+              <tr>
+                <td><%= result[i].wordName%></td>
+                <td><%=result[i].wordType%></td>
+                <td><%=result[i].wordMean%></td>
+                <td><a href="/findedit?wordlistfind=<%= result[i].wordName%>">修改</a>&nbsp;|&nbsp;<a href="/wordlist/deleword?id=<%=result[i]._id%>">删除</a></td>
+              </tr>
+           <%}%>
+         </table>
+
+
+        </div>
+         
+      </div>
+
+      <!-- 分页 -->
+  	   <div class="row">
+          
+        <!--   <nav aria-label="Page">
+            <ul class="pagination">
+              <li>
+                <a href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li>
+                <a href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav> -->
+       </div>
+  		
+  	</div>
+    
+  </body>
+</html>

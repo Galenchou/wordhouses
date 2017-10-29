@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+    
+  </head>
+  <body>
+    <%include index%>
+  	<div class="container">
+  		  <div class="row">
+        
+          <div class="col-md-2"></div>
+          <div class="col-md-6">
+              <form method="post" action="/addType/addTypesubmit" name="addType">
+                
+                <div class="form-group">
+                  
+                    <label>Add  The  type</label>
+                    <input type="text" class="form-control" name="Type" onkeyup="validate()">
+
+                </div>
+                <button type="submit" class="btn btn-primary" disabled>submit</button>
+              </form>
+
+          </div>  
+
+        </div>
+        <div class="top"></div>
+        <div class="row">
+            
+            <div class="col-md-2"></div>
+            <div class="col-md-6">
+              
+              <form method="post" action="/addType/deleteType"> 
+
+                  <div class="form-group">
+                    
+                      <label>Delete The type</label>
+                      <select class="form-control" name="delete" >
+                        <%for(var i=0;i<typeArray.length;i++){%>
+                          <option value=<%=typeArray[i].wordType%>>
+                              <%=typeArray[i].wordType%>
+                          </option>
+                        <%}%>
+                      </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary">delete</button>
+
+              </form>
+
+            </div>
+
+        </div>
+
+<!--   	 <div class="addCenter">
+        
+        <form method="post" action="/addTypesubmit" name="addtype">
+
+           <label>请输入添加单词类型:</label>
+           <input type="text" name="Type">
+           <br>
+           <input type="submit" name="" value="添加">
+
+        </form>
+
+     </div> -->
+  		
+  	</div>
+      
+      <script type="text/javascript">
+            function validate(){
+                if($(":text").val()!=""){
+                  $(":submit").prop("disabled",false);
+                }
+            }
+      </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%=title%></title>
+</head>
+<body>
+	<% include index%>
+
+	<div class="container">
+
+		  <div class="top"></div>
+		  <div class="row">
+
+	         <div class="col-md-2"></div>
+
+	          <div class="col-md-6">
+	            
+	            <form method="post" action="/findedit">
+	                <div class="row">
+	                  
+	                  <div class="col-md-6">
+	                    <input type="text" name="wordlistfind" class="form-control">   
+	                  </div>
+	                  <div class="col-md-2">
+	                     <button type="submit" class="btn btn-primary">submit</button>
+	                  </div>
+	                </div>
+	            </form>
+	          </div>     
+	      </div>
+	      <div class="top"></div>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-6">
+				  <form  action="/findedit/editsubmit" method="post">
+					
+						<div class="form-group">
+							<input type="hidden" name="wordId" value="<%=wordResult._id%>">
+							<input type="text" name="wordName" value="<%=wordResult[0].wordName%>" class='form-control'>
+							<br>
+							<input type="text" name="wordType" value="<%=wordResult[0].wordType%>"
+							class='form-control'>
+							<br>	
+							<input type="text" name="wordMean" value="<%=wordResult[0].wordMean%>"
+							class='form-control'>
+						</div>
+						
+						<button class="btn btn-primary" type="submit">修改</button>&nbsp;&nbsp;
+						<a href="/wordlist/deleword?id=<%=wordResult[0]._id%>" class="btn btn-primary">删除</a>
+						
+					
+				  </form>
+				</div>
+			</div>
+		
+	</div>
+	
+</body>
+</html>

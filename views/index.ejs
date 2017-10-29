@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+   <link rel="icon" href="images/favicon.ico" type="image/x-icon">  
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
+
+  
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+ 
+  <style type="text/css">
+    
+      img{
+        width: 70px;
+        
+        
+      }
+
+    ul{
+      position: absolute;
+      top:0px;
+      margin-top: 20px;
+
+    }
+    .top{
+      height: 60px;
+    }
+
+    
+  </style>
+</head>
+<body>
+    <div class="container">
+
+    <!-- 顶部空白 -->
+      <div class="row">
+          <div class="col-md-12">
+            <div class="top"></div>
+          </div>
+      </div>
+
+      <!-- 导航栏 -->
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+           <a href="/find"><img src="images/搜索.png"></a>
+        </div>
+        <div class="col-md-5 col-md-offset-3">
+          
+          <ul class="nav nav-pills">
+            <li role="presentation" ><a href="/find">查单词</a></li>
+            <li role="presentation" ><a href="/addWord">添加单词</a></li>
+            <li role="presentation"><a href="/wordList">单词列表</a></li>
+            <li role="presentation"><a href="/addType">添加领域</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- 导航下部留白 -->
+      <div class="top"></div>
+           
+
+      <div class="row"></div>
+        
+      
+    </div>
+
+    <script type="text/javascript">
+        $(function(){
+
+          //logo变化
+          $("img").mouseover(function(){
+            $(this).css("width","120px");
+          }).mouseout(function(){
+            $(this).css("width","70px");
+          });
+
+
+          //导航栏变化
+
+          
+          $("li").mouseover(function(){
+              $(this).addClass("active");
+          }).siblings().removeClass("active");
+
+          $("li").mouseout(function(){
+             $(this).removeClass("active");
+          })
+
+        })
+
+    </script>
+</body>
+</html>

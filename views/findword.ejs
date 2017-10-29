@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>findWord</title>
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+    
+  </head>
+  <body>
+
+    <% include find %>
+  	<div class="container">
+
+        <!-- 填充空白60px -->
+        <div class="top"></div>
+
+        <div class="row">
+          
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <div class="panel panel-primary">
+                
+                  <div class="panel-heading">Result</div>
+                  <div class="panel-body">
+                      <div style="padding:40px 0px 40px 20px;font-size: 20px">
+                        <% for(var i=0;i<result.length;i++){ %>
+                        [ <%= result[i].wordType%> ] &nbsp;&nbsp;&nbsp; : <%= result[i].wordMean%>
+                        <% }%>
+                      </div>
+                      
+                  </div>
+                </div>
+
+            </div>
+        </div>
+
+
+  	
+  		
+  	</div>
+    
+  </body>
+</html>
